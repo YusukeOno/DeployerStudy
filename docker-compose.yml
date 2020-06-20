@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+  deployerstudy-src:
+    image: deployerstudy-src
+    build:
+      context: .
+      dockerfile: Docker/src/Dockerfile
+    tty: true
+
+  deployerstudy-target:
+    image: deployerstudy-target
+    build:
+      context: .
+      dockerfile: Docker/src/Dockerfile
