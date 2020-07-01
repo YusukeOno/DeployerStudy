@@ -1,7 +1,7 @@
 FROM php:7.4.7-cli
 LABEL Name=deployerstudy Version=0.0.1
 
-RUN apt-get update && apt-get install -y unzip
+RUN apt-get update && apt-get install -y unzip ssh
 
 RUN php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php ;\
     php composer-setup.php --filename=composer;\
