@@ -12,5 +12,5 @@ services:
     image: deployerstudy-target
     build:
       context: .
-      dockerfile: Docker/src/Dockerfile
+      dockerfile: Docker/target/Dockerfile
     tty: true
