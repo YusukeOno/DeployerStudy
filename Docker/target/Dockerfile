@@ -1,7 +1,7 @@
 FROM centos:centos8.2.2004
 LABEL Name=deployerstudy Version=0.0.1
 
-RUN dnf -y update && dnf install -y openssh openssh-server
+RUN dnf -y update && dnf install -y openssh openssh-server openssh-clients
 
 # https://qiita.com/YumaInaura/items/1d5c18a9e55484ccad89
 RUN mkdir /var/run/sshd
