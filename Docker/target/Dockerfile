@@ -16,6 +16,8 @@ RUN ssh-keygen -t dsa -N "" -f /etc/ssh/ssh_host_dsa_key
 RUN ssh-keygen -t ecdsa -N "" -f /etc/ssh/ssh_host_ecdsa_key
 RUN ssh-keygen -t ed25519 -N "" -f /etc/ssh/ssh_host_ed25519_key
 
+# https://ja.coder.work/so/docker/2239459
+RUN rm -rf /run/nologin
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
