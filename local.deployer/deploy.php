@@ -7,23 +7,23 @@ require 'recipe/common.php';
 set('application', 'my_project');
 
 // Project repository
-set('repository', '');
+set('repository', 'https://github.com/YusukeOno/FuelPHPStudy.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
-set('git_tty', true); 
+set('git_tty', true);
 
-// Shared files/dirs between deploys 
+// Shared files/dirs between deploys
 set('shared_files', []);
 set('shared_dirs', []);
 
-// Writable dirs by web server 
+// Writable dirs by web server
 set('writable_dirs', []);
 
 
 // Hosts
 
-host('project.com')
-    ->set('deploy_path', '~/{{application}}');    
+host('deployerstudy-target')
+    ->set('deploy_path', '~/{{application}}');
     
 
 // Tasks
@@ -37,7 +37,7 @@ task('deploy', [
     'deploy:update_code',
     'deploy:shared',
     'deploy:writable',
-    'deploy:vendors',
+    // 'deploy:vendors',
     'deploy:clear_paths',
     'deploy:symlink',
     'deploy:unlock',

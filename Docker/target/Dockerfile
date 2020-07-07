@@ -1,7 +1,12 @@
 FROM centos:centos8.2.2004
 LABEL Name=deployerstudy Version=0.0.1
 
-RUN dnf -y update && dnf install -y openssh openssh-server openssh-clients
+RUN dnf -y update && dnf install -y openssh openssh-server openssh-clients git php php-json
+
+RUN php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php ;\
+    php composer-setup.php --filename=composer;\
+    php -r "unlink('composer-setup.php');" ;\
+    mv composer /usr/local/bin/composer
 
 # https://qiita.com/YumaInaura/items/1d5c18a9e55484ccad89
 RUN mkdir /var/run/sshd
